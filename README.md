@@ -20,9 +20,7 @@ The purpose of this document is to provide details on the system being implement
 3. An overview of the MQTT server connection
 4. A UML flow diagram of the process
 
-The link to the YouTube video associated with this document can be found at:
 
-[https://www.youtube.com/watch?v=5f3m2BX8zyE&amp;feature=youtu.be.](https://www.youtube.com/watch?v=5f3m2BX8zyE&amp;feature=youtu.be.)
 
 ## Goal of the system
 
