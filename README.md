@@ -1,9 +1,12 @@
 # Introduction
 This repository holds the code for the implmentation of a IOT network. The sensory device in the network is the BBC microbit, the gatway device is the Rapsberry Pi and at the cloud layer is an MQTT broker.
 
-Note the front end code is located in the repo - https://github.com/WarrenK-design/WarrenK-design-IOT-Network-NodeJS-HTML
+### Note 
+The front end code is located in the repo - https://github.com/WarrenK-design/WarrenK-design-IOT-Network-NodeJS-HTML
 
 The low level sensory device code for the BBC microbit is located in the repo - https://github.com/WarrenK-design/BBC-Microbit-Bluetooth-and-i2c-communication
+
+Video explanations on the project can be found on this youtube playlist https://www.youtube.com/playlist?list=PLUwop3CM6g8rhwAWVDwtwt7uUWopl_08w
 
 ## Overview of documentation
 
