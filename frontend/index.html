@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">		
+		<title>Warren Kavanagh - Front End</title>
+    </head>
+    <body>
+		<div id = "container" class="full-height">
+			<div id= "header">
+				<h1>Front End Website IoT</h1>
+			</div>		
+			<div id="content">
+				<div id ="navigation">
+					<h3>Useful Links</h3>
+					<ul>
+						<li><a href ="https://microbit.org/"target="_blank"> BBC MicroBit</a></li>
+						<li><a href = "https://www.raspberrypi.org/"target="_blank">Raspberry Pi</a></li>
+						<li><a href = "https://www.hivemq.com/public-mqtt-broker/"target="_blank">Hive MQ</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h2>Home Page</h2>
+					<form>
+						Topic to subscribe to:
+						<input disabled type="text" id="TopicSub" value="<Topic>">
+						<div class="tooltip">&#10067;
+							<span class="tooltiptext">This will be the name of the topic on the MQTT broker that will be subscibed too</span>
+						</div>
+						<br>
+						<br>
+						Topic to publish to:
+						<input disabled type="text" id="TopicPub" value="<Topic>">
+						<div class="tooltip">&#10067;
+							<span class="tooltiptext">This will be the topic messages are published to</span>
+						</div>
+						<br>
+						<br>
+						Message to publish:
+						<input disabled type="text" id="MessagePub" value="<Message>">
+						<div class="tooltip">&#10067;
+							<span class="tooltiptext">This will be the message that is published to the chosen topic</span>
+						</div>
+						<br>
+						<br>
+					</form> 
+					<button id="connect" onclick="connectToBroker()">1. Connect</button>
+					<div class="tooltip">&#10067;
+							<span class="tooltiptext">Will connect to the broker hosted by the Hive MQ website</span>
+					</div>
+					<br>
+					<br>
+					<button disabled id="publish" onclick="publishToBroker()">2.  Publish</button>
+					<div class="tooltip">&#10067;
+							<span class="tooltiptext">This will publish the message entered in the text box to the chosen topic</span>
+					</div>
+					<br>
+					<br>
+					<button disabled id="subscribe" onclick="subToBroker()">3.  Subscribe</button>
+					<div class="tooltip">&#10067;
+							<span class="tooltiptext">This will be the topic messages are published to</span>
+						</div>
+					<br>
+					<br>
+					<button disabled id="LEDOn" onclick="LEDOn()">4.  LED On</button>
+					<div class="tooltip">&#10067;
+							<span class="tooltiptext">This button will write to the "LED_Topic" to turn the LED on</span>
+						</div>
+					<br>
+					<br>
+					<button disabled id="LEDOff" onclick="LEDOff()">4.  LED Off</button>
+					<div class="tooltip">&#10067;
+							<span class="tooltiptext">This button will write to the "LED_Topic" to turn the LED off</span>
+						</div>
+					<br>
+					<br>
+					<button disabled id="disconnect" onclick="disconnectFromBroker()">5.  Disconnect</button>
+					<div class="tooltip">&#10067;
+							<span class="tooltiptext">This will disconnect from the MQTT broker</span>
+						</div>
+					<br>
+					<br>
+					<div id="Magnetometer">
+						<h3>Magnetometer Readings</h3><div class="tooltip">&#10067;
+							<span class="tooltiptext">Subsrcibe to the "Mag_Topic" to populate this table</span>
+						</div>
+						
+						<table id="MagTable">
+							<th><b>Device UUID</b></th>
+							<th><b>Sensor UUID</b></th>
+							<th><b>Location</b></th>
+							<th><b>Axis</b></th>
+							<th><b>Value</b></th>
+							<th><b>Time Stamp</b></th>
+							<tr id=MagX>
+								<td id =MagXDevice ></td>
+								<td id =MagXSensor ></td>
+								<td id =MagXLocation ></td>
+								<td id =MagXAxis></td>
+								<td id =MagXValue></td>
+								<td id =MagXTime></td>
+							</tr>
+							<tr id=MagY>
+								<td id =MagYDevice ></td>
+								<td id =MagYSensor ></td>
+								<td id =MagYLocation ></td>
+								<td id =MagYAxis></td>
+								<td id =MagYValue></td>
+								<td id =MagYTime></td>
+							</tr>
+							<tr id=MagZ>
+								<td id =MagZDevice ></td>
+								<td id =MagZSensor ></td>
+								<td id =MagZLocation ></td>
+								<td id =MagZAxis></td>
+								<td id =MagZValue></td>
+								<td id =MagZTime></td>
+							</tr>
+						</table>
+						</div>
+						<br>
+						<br>
+						<div id="Accelerometer">
+							<h3>Accelerometer Readings</h3> <div class="tooltip">&#10067;
+							<span class="tooltiptext">Subscribe to the "Accel_Topic" to populate this table</span>
+						</div>
+							<table id="AccelTable">
+								<th><b>Device UUID</b></th>
+								<th><b>Sensor UUID</b></th>
+								<th><b>Location</b></th>
+								<th><b>Axis</b></th>
+								<th><b>Value</b></th>
+								<th><b>Time Stamp</b></th>
+								<tr id=AccelX>
+									<td id =AccelXDevice ></td>
+									<td id =AccelXSensor ></td>
+									<td id =AccelXLocation ></td>
+									<td id =AccelXAxis></td>
+									<td id =AccelXValue></td>
+									<td id =AccelXTime></td>
+								</tr>
+								<tr id=AccelY>
+									<td id =AccelYDevice ></td>
+									<td id =AccelYSensor ></td>
+									<td id =AccelYLocation ></td>
+									<td id =AccelYAxis></td>
+									<td id =AccelYValue></td>
+									<td id =AccelYTime></td>
+								</tr>
+								<tr id=AccelZ>
+									<td id =AccelZDevice ></td>
+									<td id =AccelZSensor ></td>
+									<td id =AccelZLocation ></td>
+									<td id =AccelZAxis></td>
+									<td id =AccelZValue></td>
+									<td id =AccelZTime></td>
+								</tr>	
+						</table>
+						</div>
+			</div>
+		</div>
+		<!--
+			<div id="footer">
+			<p>Warren Kavanagh 2019 DT021/A IoT Module</p>
+			</div>-->
+			
+		</div>
+    </body>
+    <!--include link to js files required -->
+	<script type="text/javascript" src="paho-mqtt.js" ></script>
+	<!--This is a reference to the Paho Javascript client side browser based library-->
+	<script type="text/javascript" src="MQTTbrowserConn&PubForHive.js"></script> 
+</html>
