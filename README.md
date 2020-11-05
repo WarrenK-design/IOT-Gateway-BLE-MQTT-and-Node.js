@@ -8,6 +8,8 @@ The server code is located in the NodeJS directory.
 
 The low level sensory device code for the BBC microbit is located in the repo - https://github.com/WarrenK-design/BBC-Microbit-Bluetooth-and-i2c-communication
 
+Videos on the project can be found at - https://www.youtube.com/playlist?list=PLUwop3CM6g8rhwAWVDwtwt7uUWopl_08w
+
 
 ## Overview of documentation
 
