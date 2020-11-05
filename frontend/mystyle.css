@@ -1,0 +1,133 @@
+/*body container*/
+body {
+	/*background-color: #242582;*/
+	/*background-color:#242582;*/
+	background-color:#2CCCC3;
+	height: 150%;
+}
+
+/*html container*/
+html {
+	height: 100%;
+}
+
+/*.full-height is this class if you want a div to take up all height available*/
+.full-height {
+	height: 100%;
+}
+
+/*a is for the hyper lnk tags */
+a {
+	text-decoration: none;
+	color:red;
+}
+
+/* header tags*/
+h1,h2,h3 {
+	margin:0;
+}
+
+/*header div at top of the page*/
+#header {
+	color:white;
+	background-color:#00A9D8;
+	text-align:center;
+	padding:10px;
+}
+
+/*container div to hold the naviagtion menu and content of page*/
+#container {
+	background-color: white; /*White background*/
+	width: 800px;            /*800 pixels wide*/
+	margin-left:auto;        /*centre left in*/
+	margin-right:auto;       /*centre right in*/
+}
+
+/*content will hold the main content of the webpage*/
+#content {
+	padding: 10px;   /*top,right,bottom and left padding can be done individually*/
+}
+
+/*naviagtion is on left side of the page and used for useful links*/
+#navigation {
+	width: 170px;
+	float:left; /*will not start on new line, will start on right of parent which is content*/
+}
+
+/*heading 3's for the naviagton menu*/
+#navigation h3{
+	text-align:center;
+}
+
+/*Dont underlline the navigation hyper links*/
+#navigation ul{
+	list-style:none;
+}
+
+/*Holds the buttons, tables and text inputs*/
+#main {
+	width: 600px;
+	float:right; /*will not start on new line, will start on right of parent which is content*/
+} 
+
+/*#footer {
+	background-color:blue;
+	bottom:0;
+	position:absolute;
+	padding: 10px;
+	width:780px;
+	text-align:right;
+	color:white;
+}*/
+
+/*table for dispalying the values of the sensors*/
+table {
+  font-family: Times New Roman;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*td are the columns in the table*/
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 13x;
+}
+
+/*table headers*/
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+/*make evry 2nd table row a grey colour*/
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/*class for tooltip icon*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
